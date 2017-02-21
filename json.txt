@@ -1,0 +1,621 @@
+"D:\Program Files\Python\python.exe" D:/python_test/bika_get.py
+page=1&s=ua
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "comics": {
+      "docs": [
+        {
+          "_id": "5821859d5f6b9a4f93dbf719",
+          "title": "偶像大師",
+          "author": "すめらぎ琥珀",
+          "pagesCount": 30,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "同人",
+            "短篇"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "9acd414e-c1a6-4c6e-98be-9ac40050772c.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 40
+        },
+        {
+          "_id": "5821859c5f6b9a4f93dbf6eb",
+          "title": "槍械少女",
+          "author": "CAZA MAYOR",
+          "pagesCount": 21,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "短篇",
+            "純愛"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "5c7c5ce0-f259-4151-a53a-ab0250b3ff3b.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 59
+        },
+        {
+          "_id": "5821859e5f6b9a4f93dbf759",
+          "title": "狼狩-Wolf hunt-",
+          "author": "しおこんぶ",
+          "pagesCount": 39,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "短篇",
+            "NTR",
+            "強暴"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "a789ccf5-e543-4703-b00b-ff7a604c501e.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 191
+        },
+        {
+          "_id": "5821859f5f6b9a4f93dbf7ab",
+          "title": "たいへんよくできました？",
+          "author": "大和川",
+          "pagesCount": 212,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "長篇",
+            "純愛"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "77f89459-e5d9-4166-bb0e-510e8618ce08.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 154
+        },
+        {
+          "_id": "582185a15f6b9a4f93dbf957",
+          "title": "PANDRA~白き欲望 黒の希望",
+          "author": "エレクトさわる",
+          "pagesCount": 192,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "長篇",
+            "重口地帶",
+            "非人類"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "7e8f3c03-b8ab-4988-9ef4-d3a62af19ada.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 306
+        },
+        {
+          "_id": "582185a45f6b9a4f93dbfc97",
+          "title": "Witchcraft",
+          "author": "大和川",
+          "pagesCount": 215,
+          "epsCount": 9,
+          "finished": true,
+          "categories": [
+            "長篇",
+            "後宮閃光",
+            "NTR"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "39dd60f3-71b0-44c7-9718-94d122bb15ed.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 121
+        },
+        {
+          "_id": "582185a35f6b9a4f93dbfadb",
+          "title": "PANDRA~白き欲望 黒の希望~ II",
+          "author": "エレクトさわる",
+          "pagesCount": 220,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "長篇",
+            "重口地帶",
+            "非人類"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "b781e3e8-7822-4705-b7b6-b7a032f09d7c.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 289
+        },
+        {
+          "_id": "582185a85f6b9a4f93dbfe59",
+          "title": "覗きましたね？プロデューサーさん ",
+          "author": "てろめあな",
+          "pagesCount": 35,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "同人",
+            "短篇"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "f37ea0cf-fc92-436c-9883-e9c5209810c4.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 45
+        },
+        {
+          "_id": "582185aa5f6b9a4f93dbff25",
+          "title": "鈴谷ともっと!!イチャイチャしたい!!",
+          "author": "とんぷぅら亭",
+          "pagesCount": 26,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "短篇",
+            "艦隊收藏",
+            "純愛"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "d335e4ea-d192-4767-ae82-5797c56d5e53.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 32
+        },
+        {
+          "_id": "582185a95f6b9a4f93dbfea3",
+          "title": "魔物獵人的工口本",
+          "author": "鬼月あるちゅ/ZAN",
+          "pagesCount": 62,
+          "epsCount": 2,
+          "finished": false,
+          "categories": [
+            "同人",
+            "短篇",
+            "強暴"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "1231e00e-d833-4568-bc0b-dc53b8dc70a4.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 251
+        },
+        {
+          "_id": "582185ab5f6b9a4f93dbff9b",
+          "title": "水蜜少女",
+          "author": "カルーア鈴木",
+          "pagesCount": 136,
+          "epsCount": 5,
+          "finished": true,
+          "categories": [
+            "長篇",
+            "強暴",
+            "NTR"
+          ],
+          "thumb": {
+            "fileServer": "https://storage1.picacomic.com",
+            "path": "44d728a5-f7e8-4aa7-88ca-545fd898ac86.jpg",
+            "originalName": "cover.jpg"
+          },
+          "likesCount": 2207
+        },
+        {
+          "_id": "582185ae5f6b9a4f93dc00b7",
+          "title": "難道大小姐很淫亂嗎？",
+          "author": "クリムゾン",
+          "pagesCount": 130,
+          "epsCount": 3,
+          "finished": true,
+          "categories": [
+            "長篇",
+            "全彩",
+            "強暴"
+          ],
+          "thumb": {
+            "fileServer": "https://storage1.picacomic.com",
+            "path": "e7d5135d-d1f3-4b25-9f56-e3d0d9e500d2.jpg",
+            "originalName": "cover.jpg"
+          },
+          "likesCount": 5154
+        },
+        {
+          "_id": "582185ab5f6b9a4f93dbff5d",
+          "title": "あいかぜ",
+          "author": "中乃空",
+          "pagesCount": 29,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "短篇",
+            "艦隊收藏",
+            "後宮閃光"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "9775a49a-639b-4e90-a925-e2d07929707f.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 30
+        },
+        {
+          "_id": "582185b25f6b9a4f93dc03c7",
+          "title": "八雲紫と風俗でしたいっ! EX",
+          "author": "遠野すいか",
+          "pagesCount": 18,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "短篇",
+            "全彩",
+            "東方"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "ef79107f-ab04-49cf-bd53-96ae72842cc5.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 101
+        },
+        {
+          "_id": "582185b35f6b9a4f93dc03ef",
+          "title": "女子高生の腰つき",
+          "author": "音乃夏",
+          "pagesCount": 208,
+          "epsCount": 12,
+          "finished": true,
+          "categories": [
+            "長篇"
+          ],
+          "thumb": {
+            "fileServer": "https://storage1.picacomic.com",
+            "path": "941aa89e-4f46-40cc-b91a-029dcca5b08b.jpg",
+            "originalName": "cover.jpg"
+          },
+          "likesCount": 1051
+        },
+        {
+          "_id": "582185ba5f6b9a4f93dc05a9",
+          "title": "狂騷三重曲",
+          "author": "Cait",
+          "pagesCount": 25,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "同人",
+            "短篇",
+            "全彩"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "1ad5cd7e-4c7e-4ca2-a287-a89e36b843fa.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 946
+        },
+        {
+          "_id": "582185c05f6b9a4f93dc0799",
+          "title": "女僕新娘",
+          "author": "鬼月あるちゅ",
+          "pagesCount": 236,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "長篇",
+            "強暴",
+            "純愛"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "4054e7f0-b09d-4fd6-a0f9-707906958a8e.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 528
+        },
+        {
+          "_id": "582185ba5f6b9a4f93dc05df",
+          "title": "恋乳+小冊子+イラス",
+          "author": "momi",
+          "pagesCount": 208,
+          "epsCount": 12,
+          "finished": true,
+          "categories": [
+            "長篇",
+            "純愛"
+          ],
+          "thumb": {
+            "fileServer": "https://storage1.picacomic.com",
+            "path": "d20b93f4-0af8-4ffe-a235-8eb3b1e86ce0.jpg",
+            "originalName": "cover.jpg"
+          },
+          "likesCount": 6504
+        },
+        {
+          "_id": "582185c25f6b9a4f93dc0975",
+          "title": "脱☆妹宣言",
+          "author": "EBA",
+          "pagesCount": 86,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "長篇",
+            "妹妹系"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "2678ef57-abe5-4c7f-b00e-7317bec4a943.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 112
+        },
+        {
+          "_id": "582185c35f6b9a4f93dc0a25",
+          "title": "脱☆妹宣言2",
+          "author": "EBA",
+          "pagesCount": 106,
+          "epsCount": 1,
+          "finished": true,
+          "categories": [
+            "長篇",
+            "妹妹系"
+          ],
+          "thumb": {
+            "originalName": "cover.jpg",
+            "path": "8a5555ba-f79f-42da-8b26-520a45665388.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          },
+          "likesCount": 69
+        }
+      ],
+      "total": 11018,
+      "limit": 20,
+      "page": 1,
+      "pages": 551
+    }
+  }
+}
+
+Process finished with exit code 0
+
+
+
+
+
+
+
+
+
+
+
+"D:\Program Files\Python\python.exe" D:/duiba_src/bik/bik.py
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "comic": {
+      "_id": "58ac020c53ab5d740afce911",
+      "_creator": {
+        "_id": "583fa55cd32dfbd33263b21f",
+        "gender": "bot",
+        "name": "HANA酱",
+        "verified": false,
+        "exp": 75117,
+        "level": 27,
+        "characters": [
+          "knight"
+        ],
+        "avatar": {
+          "originalName": "avatar.jpg",
+          "path": "3fe26d4f-3fc4-4ebc-beaf-ed2d09c30711.jpg",
+          "fileServer": "https://storage1.picacomic.com"
+        },
+        "character": "https://www.picacomic.com/characters/knight.png?r=1"
+      },
+      "title": "(C88)天狗しぼり (デッド・オア・アライブ)",
+      "description": "女天狗被死肥宅。。。",
+      "thumb": {
+        "originalName": "001.jpg",
+        "path": "7402d3c5-a218-40aa-9cd7-f80a1319e18c.jpg",
+        "fileServer": "https://storage1.picacomic.com"
+      },
+      "author": "JACK-POT (じゅら)",
+      "chineseTeam": "我不看本子个人汉化",
+      "categories": [
+        "短篇"
+      ],
+      "tags": [],
+      "pagesCount": 18,
+      "epsCount": 1,
+      "finished": true,
+      "updated_at": "2017-02-21T09:02:04.814Z",
+      "created_at": "2017-02-21T08:55:12.130Z",
+      "viewsCount": 2234,
+      "likesCount": 24,
+      "isFavourite": false,
+      "isLiked": false,
+      "commentsCount": 11
+    }
+  }
+}
+
+Process finished with exit code 0
+
+
+
+
+"D:\Program Files\Python\python.exe" D:/duiba_src/bik/bik.py
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "pages": {
+      "docs": [
+        {
+          "_id": "58ac020c53ab5d740afce920",
+          "media": {
+            "originalName": "001.jpg",
+            "path": "a94befa7-99fa-4202-b85b-37d8fdc3addc.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce921",
+          "media": {
+            "originalName": "002.jpg",
+            "path": "194cdcfc-bc0b-4954-821a-e82091a83d7d.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce922",
+          "media": {
+            "originalName": "003.jpg",
+            "path": "7c5fbf68-0943-496a-99d1-f2a64e41d1c3.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce923",
+          "media": {
+            "originalName": "004.jpg",
+            "path": "64fd8118-3a0f-42e4-9711-aee9df2afbdc.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce924",
+          "media": {
+            "originalName": "005.jpg",
+            "path": "96198aff-9357-4b71-b1c2-182e2af9cf36.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce913",
+          "media": {
+            "originalName": "006.jpg",
+            "path": "9988145e-91af-430c-9ac2-437c219f2bec.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce914",
+          "media": {
+            "originalName": "007.jpg",
+            "path": "2d7ebdaf-3583-4f2a-a7a7-55c36eb6cfcd.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce915",
+          "media": {
+            "originalName": "008.jpg",
+            "path": "5d6bc88b-25e8-4c85-82a8-68ed3a02ba7e.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce916",
+          "media": {
+            "originalName": "009.jpg",
+            "path": "0ad58808-3f30-4a81-823f-8047d2fd86a3.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce917",
+          "media": {
+            "originalName": "010.jpg",
+            "path": "35831ed2-4f0a-4dcf-8612-bb2f25c8ec94.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce918",
+          "media": {
+            "originalName": "011.jpg",
+            "path": "d4a5f11b-3e6f-44ec-a85d-48efc57e0ce9.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce919",
+          "media": {
+            "originalName": "012.jpg",
+            "path": "d84ec6ce-b3f4-48fc-bd0e-531996b57ac4.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce91a",
+          "media": {
+            "originalName": "013.jpg",
+            "path": "ebd57711-d764-49d0-b948-50c6958b7f52.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce91b",
+          "media": {
+            "originalName": "014.jpg",
+            "path": "0339c1a8-a3e2-4d29-96d5-2b351a6a1802.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce91c",
+          "media": {
+            "originalName": "015.jpg",
+            "path": "20570ea3-647c-4dfc-82da-eb6517fac769.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce91d",
+          "media": {
+            "originalName": "016.jpg",
+            "path": "f3a3ead5-3bfe-449e-82d7-0cc54d2e3019.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce91e",
+          "media": {
+            "originalName": "017.jpg",
+            "path": "a5d274c9-386d-4674-aad0-65350c01cbe8.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        },
+        {
+          "_id": "58ac020c53ab5d740afce91f",
+          "media": {
+            "originalName": "018.jpg",
+            "path": "3ef9e21f-a88b-4f8c-afb9-b4ba949ddc5d.jpg",
+            "fileServer": "https://storage1.picacomic.com"
+          }
+        }
+      ],
+      "total": 18,
+      "limit": 20,
+      "page": 1,
+      "pages": 1
+    },
+    "ep": {
+      "_id": "58ac020c53ab5d740afce912",
+      "title": "第1集"
+    }
+  }
+}
+
+Process finished with exit code 0
