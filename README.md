@@ -1,0 +1,2 @@
+# bik
+get bika imgs
