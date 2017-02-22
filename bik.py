@@ -9,7 +9,22 @@ import json
 import urllib.parse
 import http.cookiejar
 import time
+import os
 
+
+def dowloadImg(imgUrl, imgName):
+
+    url = 'https://storage1.picacomic.com/static/'+imgUrl
+
+    try:
+        response = urllib.request.urlopen(url,timeout=3)
+    except Exception as e:
+        print("timeOut : "+url)
+
+    data = response.read()
+
+    with open("./img/"+imgName, "wb") as code:
+        code.write(data)
 
 def getList():
 
@@ -38,8 +53,6 @@ def getList():
     }
 
     url_values = urllib.parse.urlencode(values)
-
-    print(url_values)
 
     url_values = url_values.encode(encoding='UTF8')
 
@@ -105,8 +118,13 @@ def getImgs():
 
     response = urllib.request.urlopen(full_url)
 
-    the_page = response.read()
+    the_page = response.read().decode("utf-8")
 
-    print(the_page.decode("UTF8"))
+    jsonStr = json.loads(the_page)
+
+    for e in (jsonStr["data"]["pages"]["docs"]):
+        print(e["media"]["originalName"])
+        dowloadImg(e["media"]["path"], e["media"]["originalName"])
 
 getImgs()
+
