@@ -1,3 +1,13 @@
+"D:\Program Files\Python\python.exe" D:/duiba_src/bik/bik.py
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFic2NobmxAZ21haWwuY29tIiwicm9sZSI6Im1lbWJlciIsIm5hbWUiOiJhYnNjaG5sIiwidmVyc2lvbiI6IjIuMC4xLjMiLCJpYXQiOjE0ODc5MjYyNzYsImV4cCI6MTQ4ODUzMTA3Nn0.M8jCVyi23xg_nzFFvyFrULZQ1UHf-gAR68QpX90xApM"
+  }
+}
+
+
 "D:\Program Files\Python\python.exe" D:/python_test/bika_get.py
 page=1&s=ua
 {
