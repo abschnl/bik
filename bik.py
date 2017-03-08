@@ -13,16 +13,31 @@ TOKEN = ""
 #线程池
 imgsThreads = []
 
+retry = 0
+data = bytes()
+
+def openUrl(url):
+    try:
+        response = urllib.request.urlopen(url)
+        global data
+        data = response.read()
+    except Exception as e:
+        global retry
+        retry = retry + 1
+        print(" retry :"+retry +" url : "+ url)
+
+
 def dowloadImg(imgUrl, imgName, title):
 
     url = 'https://storage1.picacomic.com/static/'+imgUrl
 
-    try:
-        response = urllib.request.urlopen(url)
-    except Exception as e:
-        print("timeOut : "+url)
+    global retry
 
-    data = response.read()
+    openUrl(url)
+
+    if retry != 0 & retry < 4:
+        openUrl(url)
+
 
     if os.path.exists("./img/"+title+"/"):
         pass
@@ -30,7 +45,13 @@ def dowloadImg(imgUrl, imgName, title):
         os.mkdir("./img/"+title+"/")
 
     with open("./img/"+title+"/"+imgName, "wb") as code:
+        global data
         code.write(data)
+
+    data = bytes()
+
+    retry = 0
+
 
 def login():
     url = 'https://picaapi.picacomic.com/auth/sign-in'
@@ -49,8 +70,6 @@ def login():
         'app-version': '2.0.1.3',
         'api-key': '2587EFC6F859B4E3A1D8B6D33B272',
         'app-platform': 'ios',
-        #    'Accept-Encoding': 'gzip;q=1.0, compress;q=0.5',
-        #    'Accept-Language': 'zh-Hans-CN;q=1.0',
         'app-uuid': '8E4C6215-FF1E-4661-986C-226B841B8138',
         'Connection': 'keep-alive'
     }
@@ -144,8 +163,6 @@ def getCover(id):
         'app-version': '2.0.1.3',
         'api-key': '2587EFC6F859B4E3A1D8B6D33B272',
         'app-platform': 'ios',
-        #    'Accept-Encoding': 'gzip;q=1.0, compress;q=0.5',
-        #    'Accept-Language': 'zh-Hans-CN;q=1.0',
         'app-uuid': '8E4C6215-FF1E-4661-986C-226B841B8138',
         'Connection': 'keep-alive'
     }
@@ -185,8 +202,6 @@ def getImgs(id, title):
             'app-version': '2.0.1.3',
             'api-key': '2587EFC6F859B4E3A1D8B6D33B272',
             'app-platform': 'ios',
-            #    'Accept-Encoding': 'gzip;q=1.0, compress;q=0.5',
-            #    'Accept-Language': 'zh-Hans-CN;q=1.0',
             'app-uuid': '8E4C6215-FF1E-4661-986C-226B841B8138',
             'Connection': 'keep-alive'
         }
