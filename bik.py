@@ -1,17 +1,17 @@
 # !/usr/bin/env python3
 # coding: utf-8
 
-import smtplib
-from email.mime.text import MIMEText
-from email.header import Header
 import urllib.request
 import json
 import urllib.parse
-import http.cookiejar
 import time
 import os
+import threading
 
+#登陆后的token
 TOKEN = ""
+#线程池
+imgsThreads = []
 
 def dowloadImg(imgUrl, imgName, title):
 
@@ -80,11 +80,6 @@ def getList():
 
     url = 'http://picaapi.picacomic.com/comics'
 
-    values = {
-        'page': '1',
-        's': 'ua'
-    }
-
     user_agent = 'sora/2.2 (com.picacomic.sora; build:2.2; iOS 10.0.1) Alamofire/4.0.1'
 
     headers = {
@@ -101,26 +96,40 @@ def getList():
         'Connection': 'keep-alive'
     }
 
-    url_values = urllib.parse.urlencode(values)
+    page = 1
+    pageTotal = 10
 
-    url_values = url_values.encode(encoding='UTF8')
+    while page < pageTotal:
 
-    full_url = urllib.request.Request(url, url_values,  headers)
+        values = {
+            'page': page,
+            's': pageTotal
+        }
 
-    response = urllib.request.urlopen(full_url)
+        url_values = urllib.parse.urlencode(values)
 
-    the_page = response.read().decode("utf-8")
+        url_values = url_values.encode(encoding='UTF8')
 
-    jsonStr = json.loads(the_page)
+        full_url = urllib.request.Request(url, url_values,  headers)
 
-    for e in (jsonStr["data"]["comics"]["docs"]):
-        print(e["_id"])
+        response = urllib.request.urlopen(full_url)
 
-        getCover(e["_id"])
+        the_page = response.read().decode("utf-8")
+
+        jsonStr = json.loads(the_page)
+
+        for e in (jsonStr["data"]["comics"]["docs"]):
+            print(e["_id"])
+            getCover(e["_id"])
+
+        pageTotal = jsonStr["data"]["comics"]["pages"]
+        print("getList pageTotal : "+str(pageTotal))
+        page = page + 1
+        print(" getList page : "+ str(page))
 
 
 def getCover(id):
-
+    id = id
     global TOKEN
 
     url = 'https://picaapi.picacomic.com/comics/'+id
@@ -157,9 +166,9 @@ def getCover(id):
 
 
 def getImgs(id, title):
-
+    id = id
+    title = title
     page = 1
-
     pageTotal = 10
 
     while page < pageTotal:
@@ -190,12 +199,28 @@ def getImgs(id, title):
 
         jsonStr = json.loads(the_page)
 
-        for e in (jsonStr["data"]["pages"]["docs"]):
-            print(e["media"]["originalName"])
+        def doDowload(e):
+            print("getImgs media originalName : " + e["media"]["originalName"])
             dowloadImg(e["media"]["path"], e["media"]["originalName"], title)
+
+        for e in (jsonStr["data"]["pages"]["docs"]):
+            th = threading.Thread(target=doDowload, args=(e,))
+            th.start();
+            imgsThreads.append(th)
+            print(" imgsThreads count :" + str(len(imgsThreads)))
+
+        for t in imgsThreads:
+            t.join()
+
+        time.sleep(10)
+
+        imgsThreads.clear();
 
         pageTotal = jsonStr["data"]["pages"]["pages"]
         page = page + 1
 
 login()
+
+
+
 
