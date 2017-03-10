@@ -11,51 +11,12 @@ import redis
 
 #登陆后的token
 TOKEN = ""
-#线程池
-imgsThreads = []
 #Redis
 r = redis.Redis(host='192.168.2.113', port=6379, db=0)
 
-retry = 0
-data = bytes()
+i = 1
 
-def openUrl(url):
-    try:
-        response = urllib.request.urlopen(url,timeout=10)
-        global data
-        data = response.read()
-    except Exception as e:
-        global retry
-        retry = retry + 1
-        print(" retry :"+str(retry) +" url : "+ url)
-
-
-def dowloadImg(imgUrl, imgName, title):
-
-    url = 'https://storage1.picacomic.com/static/'+imgUrl
-
-    global retry
-
-    openUrl(url)
-
-    if retry != 0 & retry < 4:
-        openUrl(url)
-
-
-    if os.path.exists("./img/"+title+"/"):
-        pass
-    else:
-        os.mkdir("./img/"+title+"/")
-
-    with open("./img/"+title+"/"+imgName, "wb") as code:
-        global data
-        code.write(data)
-
-    data = bytes()
-
-    retry = 0
-
-
+# 登陆方法
 def login():
     url = 'https://picaapi.picacomic.com/auth/sign-in'
 
@@ -96,11 +57,10 @@ def login():
     getList()
 
 
+#获取列表
 def getList():
 
     global TOKEN
-
-    url = 'http://picaapi.picacomic.com/comics'
 
     user_agent = 'sora/2.2 (com.picacomic.sora; build:2.2; iOS 10.0.1) Alamofire/4.0.1'
 
@@ -112,27 +72,28 @@ def getList():
         'app-version': '2.0.1.3',
         'api-key': '2587EFC6F859B4E3A1D8B6D33B272',
         'app-platform': 'ios',
-        #    'Accept-Encoding': 'gzip;q=1.0, compress;q=0.5',
-        #    'Accept-Language': 'zh-Hans-CN;q=1.0',
         'app-uuid': '8E4C6215-FF1E-4661-986C-226B841B8138',
         'Connection': 'keep-alive'
     }
 
     page = 1
-    pageTotal = 10
 
-    while page < pageTotal:
+    while True:
 
-        values = {
-            'page': page,
-            's': pageTotal
-        }
+        # cosplay列表
+        cosUrl = "https://picaapi.picacomic.com/comics?"
+        cosUrl = cosUrl + "page=" + str(page) + "&c=Cosplay&s=ua"
 
-        url_values = urllib.parse.urlencode(values)
+        print("cosUrl : " + cosUrl)
 
-        url_values = url_values.encode(encoding='UTF8')
+        # 最近更新列表
+        # url = 'http://picaapi.picacomic.com/comics?'
+        #
+        # url = url + "page="+str(page)+"&s=ua"
+        #
+        # print("url : "+ url)
 
-        full_url = urllib.request.Request(url, url_values,  headers)
+        full_url = urllib.request.Request(cosUrl, headers=headers)
 
         response = urllib.request.urlopen(full_url)
 
@@ -147,14 +108,20 @@ def getList():
         pageTotal = jsonStr["data"]["comics"]["pages"]
         print("getList pageTotal : "+str(pageTotal))
         page = page + 1
-        print(" getList page : "+ str(page))
+        print(" getList page : " + str(page))
+
+        if page > pageTotal:
+            print("page : "+page+" pageTotal : "+ pageTotal)
+            break
 
 
 def getCover(id):
     id = id
     global TOKEN
 
-    url = 'https://picaapi.picacomic.com/comics/'+id
+    url = "https://picaapi.picacomic.com/comics/"+id
+
+    print(url)
 
     user_agent = 'sora/2.2 (com.picacomic.sora; build:2.2; iOS 10.0.1) Alamofire/4.0.1'
 
@@ -180,7 +147,9 @@ def getCover(id):
 
     title = jsonStr["data"]["comic"]["title"]
 
-    print(title)
+    timeStr = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+
+    print("timeStr : "+timeStr+"  title : "+title)
 
     getImgs(id, title)
 
@@ -189,9 +158,8 @@ def getImgs(id, title):
     id = id
     title = title
     page = 1
-    pageTotal = 10
 
-    while page < pageTotal:
+    while True:
 
         url = 'https://picaapi.picacomic.com/comics/'+id+'/order/1/pages?page='+str(page)
 
@@ -211,41 +179,36 @@ def getImgs(id, title):
 
         full_url = urllib.request.Request(url, headers=headers)
 
-        response = urllib.request.urlopen(full_url)
+        try:
+            response = urllib.request.urlopen(full_url,timeout=20)
+        except Exception as e:
+            print("full_url : "+url+" e: "+str(e))
+            continue
 
         the_page = response.read().decode("utf-8")
 
         jsonStr = json.loads(the_page)
 
-        def doDowload(e):
-            print("getImgs media originalName : " + e["media"]["originalName"])
-            # dowloadImg(e["media"]["path"], e["media"]["originalName"], title)
+        for e in (jsonStr["data"]["pages"]["docs"]):
 
+            data = [{"imgUrl": e["media"]["path"], "imgName": e["media"]["originalName"], "title": title}]
+            dataJson = json.dumps(data)
+            global i
+            key = str('DOWN-LOAD-COS-' +str(i))
 
-        # for e in (jsonStr["data"]["pages"]["docs"]):
-        #     th = threading.Thread(target=doDowload, args=(e,))
-        #     th.start();
-        #     imgsThreads.append(th)
-        #     print(" imgsThreads count :" + str(len(imgsThreads)))
-        #
-        # for t in imgsThreads:
-        #     t.join()
-        #
-        # time.sleep(10)
-        #
-        # imgsThreads.clear();
+            # print("key : "+key+" value :"+dataJson)
+
+            r.setex(name=key,value=dataJson,time=60*60*24*7)
+
+            i = i + 1
 
         pageTotal = jsonStr["data"]["pages"]["pages"]
+
+        print("imgPageTotal : "+ str(pageTotal))
+
         page = page + 1
+        if page > pageTotal:
+            print("getImgs page : "+str(page)+" pageTotal : "+ str(pageTotal))
+            break
 
-# login()
-
-info = r.info()
-for key in info:
-  print ("%s: %s" % (key, info[key]))
-
-print('\ndbsize: %s' % r.dbsize())
-
-
-
-
+login()
